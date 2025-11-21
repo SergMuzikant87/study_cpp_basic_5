@@ -1,0 +1,33 @@
+#include <iostream>
+#include <string>
+
+int main(int argc, char * argv [])
+{
+    std::cout << "Input array  : ";
+
+    #define ELEMENTS_COUNT 10
+    int array[ELEMENTS_COUNT]; // Для случайности не инициализируем массив сразу, а оставляем неопределённые значения
+    for(int cur_index = 0; cur_index < ELEMENTS_COUNT; cur_index++) // Перемешиваем эти неопределённые значения (инициализируем массив)
+    {
+        array[cur_index] = ( ((array[cur_index] ^ array[ELEMENTS_COUNT - cur_index - 1]) + (array[0] / 3))  %  789 ) & 0x00000FFF;
+        std::cout << array[cur_index] << " ";
+    }
+
+    std::cout << std::endl << "Output array : ";
+    for(int minimum_index = 0; minimum_index < ELEMENTS_COUNT; minimum_index++)
+    {
+        for(int cur_index = (ELEMENTS_COUNT - 1), prev_index = (ELEMENTS_COUNT - 2); cur_index > minimum_index; cur_index--, prev_index--)
+        {
+            if(array[cur_index] < array[prev_index])
+            {
+                array[cur_index]  ^= array[prev_index];
+                array[prev_index] ^= array[cur_index];
+                array[cur_index]  ^= array[prev_index];
+            }
+        }
+        std::cout << array[minimum_index] << " ";
+    }
+    std::cout << std::endl;
+
+    return 0;
+}
