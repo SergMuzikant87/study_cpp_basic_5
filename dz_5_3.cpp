@@ -6,7 +6,7 @@ int main(int argc, char * argv [])
     #define I_COUNT 3
     #define J_COUNT 6
 
-    int array[I_COUNT][J_COUNT]; // Для случайности не инициализируем массив сразу, а оставляем неопределённые значения
+    int array[I_COUNT][J_COUNT]; // Для генерации значений похожих на случайные, не инициализируем массив сразу, а сначала оставляем неопределённые значения
 
     int index_of_minimum[2]={0,0};
     int index_of_maximum[2]={0,0};
@@ -15,7 +15,7 @@ int main(int argc, char * argv [])
     {
         for(int j = 0; j < J_COUNT; j++)
         {
-            // Перемешиваем эти неопределённые значения (инициализируем массив)
+            // Затем перемешиваем эти неопределённые значения, тем самым инициализируем массив значениями, которые ещё больше похожи на случайные
             array[i][j] = ( ( ((array[i][j]/3) ^ (array[I_COUNT - i - 1][j]/5) ^ (array[i][J_COUNT - j - 1]/7) ^ (array[I_COUNT - i - 1][J_COUNT - j - 1]/9)))  %  789 ) & 0x00000FFF;
 
             if(array[i][j] < array[index_of_minimum[0]][index_of_minimum[1]]) 
