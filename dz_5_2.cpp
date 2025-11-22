@@ -8,7 +8,6 @@ int main(int argc, char * argv [])
     int minimum = (int)(~(((unsigned int)1) << ((sizeof(int) <<  3) - 1))); // Инициализируем максимальным возможным значением знакового типа данных "int"
     int maximum = (int)(((unsigned int)1) << ((sizeof(int) <<  3) - 1)); // Инициализируем минимальным возможным значением знакового типа данных "int"
 
-    std::cout << minimum << " " << maximum << " \n";
     for(int index = 0; index < ELEMENTS_COUNT; index++)
     {
         // Затем перемешиваем эти неопределённые значения, тем самым инициализируем массив значениями, которые ещё больше похожи на случайные
