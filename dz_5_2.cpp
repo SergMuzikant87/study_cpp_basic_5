@@ -7,6 +7,7 @@ int main(int argc, char * argv [])
     int array[ELEMENTS_COUNT]; // Для генерации значений похожих на случайные, не инициализируем массив сразу, а сначала оставляем неопределённые значения
     int minimum = (int)~((unsigned int)1 << ((sizeof(int) <<  3) - 1)); // Инициализируем максимальным возможным значением знакового типа данных "int"
     int maximum = (int)((unsigned int)1 << ((sizeof(int) <<  3) - 1)); // Инициализируем минимальным возможным значением знакового типа данных "int"
+    
     std::cout << minimum << " " << maximum << " \n";
     for(int index = 0; index < ELEMENTS_COUNT; index++)
     {
@@ -19,8 +20,8 @@ int main(int argc, char * argv [])
         std::cout << array[index] << ((index < (ELEMENTS_COUNT - 1)) ? ", " : " \n");
     }
 
-    std::cout << "minimum = " << minimum << "\n";
-    std::cout << "maximum = " << maximum << "\n";
+    std::cout << "Minimum = " << minimum << "\n";
+    std::cout << "Maximum = " << maximum << "\n";
     
     return 0;
 }

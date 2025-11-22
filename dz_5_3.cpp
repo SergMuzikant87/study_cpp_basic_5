@@ -11,7 +11,7 @@ int main(int argc, char * argv [])
     int index_of_maximum[2] = {0, 0};
 
     for(int i = 0; i < I_COUNT; i++)
-    {
+    {wq
         for(int j = 0; j < J_COUNT; j++)
         {
             // Затем перемешиваем эти неопределённые значения, тем самым инициализируем массив значениями, которые ещё больше похожи на случайные
@@ -34,8 +34,8 @@ int main(int argc, char * argv [])
         std::cout << std::endl;
     }
 
-    std::cout << "index of minimum = " << index_of_minimum[0] << " " << index_of_minimum[1] << "\n";
-    std::cout << "index of maximum = " << index_of_maximum[0] << " " << index_of_maximum[1] << "\n";
+    std::cout << "Index of minimum = " << index_of_minimum[0] << " " << index_of_minimum[1] << "\n";
+    std::cout << "Index of maximum = " << index_of_maximum[0] << " " << index_of_maximum[1] << "\n";
     
     return 0;
 }
