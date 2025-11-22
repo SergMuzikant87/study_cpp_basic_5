@@ -7,8 +7,8 @@ int main(int argc, char * argv [])
 
     int array[I_COUNT][J_COUNT]; // Для генерации значений похожих на случайные, не инициализируем массив сразу, а сначала оставляем неопределённые значения
 
-    int index_of_minimum[2]={0,0};
-    int index_of_maximum[2]={0,0};
+    int index_of_minimum[2] = {0, 0};
+    int index_of_maximum[2] = {0, 0};
 
     for(int i = 0; i < I_COUNT; i++)
     {
