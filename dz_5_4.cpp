@@ -14,9 +14,9 @@ int main(int argc, char * argv [])
     }
 
     std::cout << std::endl << "Output array : ";
-    for(int minimum_index = 0; minimum_index < ELEMENTS_COUNT; minimum_index++)
+    for(int pass_stop_index = 0; pass_stop_index < ELEMENTS_COUNT; pass_stop_index++)
     {
-        for(int cur_index = (ELEMENTS_COUNT - 1), prev_index = (ELEMENTS_COUNT - 2); cur_index > minimum_index; cur_index--, prev_index--)
+        for(int cur_index = (ELEMENTS_COUNT - 1), prev_index = (ELEMENTS_COUNT - 2); cur_index > pass_stop_index; cur_index--, prev_index--)
         {
             if(array[cur_index] < array[prev_index])
             {
@@ -25,7 +25,7 @@ int main(int argc, char * argv [])
                 array[cur_index]  ^= array[prev_index];
             }
         }
-        std::cout << array[minimum_index] << " ";
+        std::cout << array[pass_stop_index] << " ";
     }
     std::cout << std::endl;
 
