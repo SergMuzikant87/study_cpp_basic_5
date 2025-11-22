@@ -5,9 +5,9 @@ int main(int argc, char * argv [])
     #define ELEMENTS_COUNT 10
     
     int array[ELEMENTS_COUNT]; // Для генерации значений похожих на случайные, не инициализируем массив сразу, а сначала оставляем неопределённые значения
-    int minimum = (int)~((unsigned int)1 << ((sizeof(int) <<  3) - 1)); // Инициализируем максимальным возможным значением знакового типа данных "int"
-    int maximum = (int)((unsigned int)1 << ((sizeof(int) <<  3) - 1)); // Инициализируем минимальным возможным значением знакового типа данных "int"
-    
+    int minimum = (int)(~(((unsigned int)1) << ((sizeof(int) <<  3) - 1))); // Инициализируем максимальным возможным значением знакового типа данных "int"
+    int maximum = (int)(((unsigned int)1) << ((sizeof(int) <<  3) - 1)); // Инициализируем минимальным возможным значением знакового типа данных "int"
+
     std::cout << minimum << " " << maximum << " \n";
     for(int index = 0; index < ELEMENTS_COUNT; index++)
     {
